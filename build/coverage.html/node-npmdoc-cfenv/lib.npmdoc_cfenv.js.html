@@ -197,16 +197,16 @@
     <h1>Code coverage report for <span class="entity">node-npmdoc-cfenv/lib.npmdoc_cfenv.js</span></h1>
     <h2>
         
-        Statements: <span class="metric">93.75% <small>(15 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Statements: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Branches: <span class="metric">64.29% <small>(9 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(14 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
         Functions: <span class="metric">100% <small>(3 / 3)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         
-        Lines: <span class="metric">93.75% <small>(15 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
@@ -279,27 +279,20 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -308,12 +301,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
 <span class="cline-any cline-yes">1</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1</span>
 <span class="cline-any cline-yes">1</span>
@@ -347,9 +347,9 @@
         local.modeJs = (function () {
             try {
                 return typeof navigator.userAgent === 'string' &amp;&amp;
-<span class="branch-1 cbranch-no" title="branch not covered" >                    typeof document.querySelector('body') === 'object' </span>&amp;&amp;
-<span class="branch-2 cbranch-no" title="branch not covered" >                    typeof XMLHttpRequest.prototype.open === 'function' </span>&amp;&amp;
-<span class="branch-3 cbranch-no" title="branch not covered" >                    'browser';</span>
+                    typeof document.querySelector('body') === 'object' &amp;&amp;
+                    typeof XMLHttpRequest.prototype.open === 'function' &amp;&amp;
+                    'browser';
             } catch (errorCaughtBrowser) {
                 return module.exports &amp;&amp;
                     typeof process.versions.node === 'string' &amp;&amp;
@@ -359,15 +359,15 @@
         }());
         // init global
         local.global = local.modeJs === 'browser'
-            ? <span class="branch-0 cbranch-no" title="branch not covered" >window</span>
+            ? window
             : global;
         // init utility2_rollup
         local = local.global.utility2_rollup || local;
         // init lib
         local.local = local.npmdoc_cfenv = local;
         // init exports
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (local.modeJs === 'browser') {
-<span class="cstat-no" title="statement not covered" >            local.global.utility2_npmdoc_cfenv = local;</span>
+        if (local.modeJs === 'browser') {
+            local.global.utility2_npmdoc_cfenv = local;
         } else {
             module.exports = local;
             module.exports.__dirname = __dirname;
@@ -380,7 +380,7 @@
 </table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Fri Apr 07 2017 22:12:17 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Fri Apr 07 2017 22:14:08 GMT+0000 (UTC)</div>
 </div>
 </body>
 </html>
