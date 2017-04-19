@@ -1,9 +1,14 @@
-# api documentation for  [cfenv (v1.0.4)](https://github.com/cloudfoundry-community/node-cfenv)  [![npm package](https://img.shields.io/npm/v/npmdoc-cfenv.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cfenv) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cfenv.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cfenv)
+# npmdoc-cfenv
+
+#### api documentation for  [cfenv (v1.0.4)](https://github.com/cloudfoundry-community/node-cfenv)  [![npm package](https://img.shields.io/npm/v/npmdoc-cfenv.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cfenv) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cfenv.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cfenv)
+
 #### easy access to your Cloud Foundry application environment
 
-[![NPM](https://nodei.co/npm/cfenv.png?downloads=true)](https://www.npmjs.com/package/cfenv)
+[![NPM](https://nodei.co/npm/cfenv.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/cfenv)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-cfenv/build/screenCapture.buildNpmdoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-cfenv%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-cfenv/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-cfenv/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-cfenv/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-cfenv/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-cfenv/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-cfenv/build/screenCapture.npmPackageListing.svg)
 
@@ -44,17 +49,14 @@
     "main": "./lib/cfenv",
     "maintainers": [
         {
-            "name": "pmuellr",
-            "email": "pmuellr@apache.org"
+            "name": "pmuellr"
         },
         {
-            "name": "srl",
-            "email": "srl@icu-project.org"
+            "name": "srl"
         }
     ],
     "name": "cfenv",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/cloudfoundry-community/node-cfenv.git"
@@ -64,92 +66,6 @@
     },
     "version": "1.0.4"
 }
-```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module cfenv](#apidoc.module.cfenv)
-1.  [function <span class="apidocSignatureSpan">cfenv.</span>getAppEnv (options)](#apidoc.element.cfenv.getAppEnv)
-1.  object <span class="apidocSignatureSpan">cfenv.</span>server
-
-#### [module cfenv.server](#apidoc.module.cfenv.server)
-1.  [function <span class="apidocSignatureSpan">cfenv.server.</span>main ()](#apidoc.element.cfenv.server.main)
-
-
-
-# <a name="apidoc.module.cfenv"></a>[module cfenv](#apidoc.module.cfenv)
-
-#### <a name="apidoc.element.cfenv.getAppEnv"></a>[function <span class="apidocSignatureSpan">cfenv.</span>getAppEnv (options)](#apidoc.element.cfenv.getAppEnv)
-- description and source-code
-```javascript
-getAppEnv = function (options) {
-  if (options == null) {
-    options = {};
-  }
-  return new AppEnv(options);
-}
-```
-- example usage
-```shell
-...
-
-
-quick start
-================================================================================
-
-var cfenv = require("cfenv")
-
-var appEnv = cfenv.getAppEnv()
-...
-// start the server on the given port and binding host, and print
-// url to server when it starts
-
-server.listen(appEnv.port, appEnv.bind, function() {
-    console.log("server starting on " + appEnv.url)
-})
-...
-```
-
-
-
-# <a name="apidoc.module.cfenv.server"></a>[module cfenv.server](#apidoc.module.cfenv.server)
-
-#### <a name="apidoc.element.cfenv.server.main"></a>[function <span class="apidocSignatureSpan">cfenv.server.</span>main ()](#apidoc.element.cfenv.server.main)
-- description and source-code
-```javascript
-main = function () {
-  var appEnv, dump, server;
-  appEnv = cfenv.getAppEnv();
-  dump = generateDump(appEnv);
-  server = http.createServer();
-  server.on("request", function(request, response) {
-    response.writeHead(200, {
-      "Content-Type": "text/plain"
-    });
-    return response.end(dump);
-  });
-  return server.listen(appEnv.port, appEnv.bind, function() {
-    return console.log("server starting on " + appEnv.url);
-  });
-}
-```
-- example usage
-```shell
-...
-  };
-
-  JL = function(object) {
-    return JSON.stringify(object, null, 4);
-  };
-
-  if (require.main === module) {
-    exports.main();
-  }
-
-}).call(this);
-...
 ```
 
 
