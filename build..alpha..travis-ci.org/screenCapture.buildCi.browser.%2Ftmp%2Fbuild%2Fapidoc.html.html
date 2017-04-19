@@ -65,19 +65,19 @@
 
         <li>
 
-            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">cfenv.</span>server</span>
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan"></span>cfenv</span>
 
         </li>
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.cfenv.server">module cfenv.server</a><ol>
+    <li class="apidocModuleLi"><a href="#apidoc.module.cfenv.cfenv">module cfenv.cfenv</a><ol>
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.cfenv.server.main">
-            function <span class="apidocSignatureSpan">cfenv.server.</span>main
-            <span class="apidocSignatureSpan">()</span>
+            <a class="apidocElementLiA" href="#apidoc.element.cfenv.cfenv.getAppEnv">
+            function <span class="apidocSignatureSpan">cfenv.cfenv.</span>getAppEnv
+            <span class="apidocSignatureSpan">(options)</span>
             </a>
 
         </li>
@@ -128,43 +128,38 @@ server.listen(appEnv.port, appEnv.bind, function() {
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.cfenv.server" id="apidoc.module.cfenv.server">module cfenv.server</a></h1>
+<h1><a href="#apidoc.module.cfenv.cfenv" id="apidoc.module.cfenv.cfenv">module cfenv.cfenv</a></h1>
 
 
     <h2>
-        <a href="#apidoc.element.cfenv.server.main" id="apidoc.element.cfenv.server.main">
-        function <span class="apidocSignatureSpan">cfenv.server.</span>main
-        <span class="apidocSignatureSpan">()</span>
+        <a href="#apidoc.element.cfenv.cfenv.getAppEnv" id="apidoc.element.cfenv.cfenv.getAppEnv">
+        function <span class="apidocSignatureSpan">cfenv.cfenv.</span>getAppEnv
+        <span class="apidocSignatureSpan">(options)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">main = function () {
-  var appEnv, dump, server;
-  appEnv = cfenv.getAppEnv();
-  dump = generateDump(appEnv);
-  server = http.createServer();
-  server.on("request", function(request, response) {
-    response.writeHead(200, {
-      "Content-Type": "text/plain"
-    });
-    return response.end(dump);
-  });
-  return server.listen(appEnv.port, appEnv.bind, function() {
-    return console.log("server starting on " + appEnv.url);
-  });
+    <li>description and source-code<pre class="apidocCodePre">getAppEnv = function (options) {
+  if (options == null) {
+    options = {};
+  }
+  return new AppEnv(options);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  };
 
-  JL = function(object) {
-    return JSON.stringify(object, null, 4);
-  };
 
-  if (require.main === module) {
-    exports.<span class="apidocCodeKeywordSpan">main</span>();
-  }
+quick start
+================================================================================
 
-}).call(this);
+var cfenv = require("cfenv")
+
+var appEnv = cfenv.<span class="apidocCodeKeywordSpan">getAppEnv</span>()
+...
+// start the server on the given port and binding host, and print
+// url to server when it starts
+
+server.listen(appEnv.port, appEnv.bind, function() {
+    console.log("server starting on " + appEnv.url)
+})
 ...</pre></li>
     </ul>
 
