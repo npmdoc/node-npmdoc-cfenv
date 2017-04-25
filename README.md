@@ -1,6 +1,6 @@
 # npmdoc-cfenv
 
-#### api documentation for  [cfenv (v1.0.4)](https://github.com/cloudfoundry-community/node-cfenv)  [![npm package](https://img.shields.io/npm/v/npmdoc-cfenv.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cfenv) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cfenv.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cfenv)
+#### basic api documentation for  [cfenv (v1.0.4)](https://github.com/cloudfoundry-community/node-cfenv)  [![npm package](https://img.shields.io/npm/v/npmdoc-cfenv.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-cfenv) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-cfenv.svg)](https://travis-ci.org/npmdoc/node-npmdoc-cfenv)
 
 #### easy access to your Cloud Foundry application environment
 
@@ -64,7 +64,8 @@
     "scripts": {
         "start": "node server.js"
     },
-    "version": "1.0.4"
+    "version": "1.0.4",
+    "bin": {}
 }
 ```
 
